@@ -28,7 +28,7 @@ class NYTimesAPI {
     }
 
     
-     // Obtener libros de una lista específica
+// Obtener libros de una lista específica
      
     async getBooksByList(listName) {
         try {

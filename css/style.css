@@ -1,0 +1,356 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Encabezado */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Contenido Principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cargador */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 50px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Contenedor de Categorías */
+.categories-container {
+    margin-top: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.search-filter {
+    margin-bottom: 15px;
+}
+
+.search-filter input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sort-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sort-controls button, 
+.sort-controls select {
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sort-controls button:hover,
+.sort-controls select:hover {
+    background-color: #c0392b;
+}
+
+.categories-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.category-info {
+    margin-bottom: 15px;
+}
+
+.category-info p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #c0392b;
+}
+
+/* Contenedor de Libros */
+.back-button-container {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    padding: 8px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.list-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.books-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover {
+    flex: 0 0 200px;
+    position: relative;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.book-weeks {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.book-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.book-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.book-author {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.book-description {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #c0392b;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #c0392b;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Diseño Responsive - Versión Tablet */
+@media (min-width: 768px) {
+    .filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .search-filter {
+        margin-bottom: 0;
+    }
+
+    .search-filter input {
+        width: 250px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .sort-controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .categories-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-card {
+        flex-direction: row;
+    }
+
+    .book-cover {
+        flex: 0 0 150px;
+    }
+}
+
+/* Diseño Responsive - Versión Desktop */
+@media (min-width: 1024px) {
+    .logo h1 {
+        font-size: 32px;
+    }
+
+    .logo h2 {
+        font-size: 42px;
+    }
+
+    .categories-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+} 
