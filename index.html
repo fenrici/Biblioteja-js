@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - New York Times Best Sellers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>New York Times</h1>
+            <h2>Best Sellers</h2>
+        </div>
+    </header>
+
+    <main>
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="categories-container" class="categories-container">
+            <!-- Las categorías se cargarán aca dinámicamente -->
+            <div class="filters">
+                <div class="search-filter">
+                    <input type="text" id="category-search" placeholder="Buscar categoría...">
+                </div>
+                <div class="sort-controls">
+                    <button id="sort-name" data-sort="name">Categoría A-Z</button>
+                    <button id="sort-oldest" data-sort="oldest">Fecha más antigua</button>
+                    <button id="sort-newest" data-sort="newest">Fecha más reciente</button>
+                    <select id="frequency-filter">
+                        <option value="all">Todos</option>
+                        <option value="WEEKLY">Semanal</option>
+                        <option value="MONTHLY">Mensual</option>
+                    </select>
+                </div>
+            </div>
+            <div id="categories-list" class="categories-list">
+                <!-- Las categorías se cargarán aca -->
+            </div>
+        </div>
+
+        <div id="books-container" class="books-container hidden">
+            <div class="back-button-container">
+                <button id="back-to-index" class="back-button">⬅ VOLVER AL ÍNDICE</button>
+            </div>
+            <h2 id="list-title" class="list-title"></h2>
+            <div class="filters">
+                <div class="search-filter">
+                    <input type="text" id="title-search" placeholder="Buscar por título...">
+                    <input type="text" id="author-search" placeholder="Buscar por autor...">
+                </div>
+                <div class="sort-controls">
+                    <button id="sort-title" data-sort="title">Título A-Z</button>
+                    <button id="sort-author" data-sort="author">Autor A-Z</button>
+                </div>
+            </div>
+            <div id="books-list" class="books-list">
+                <!-- Los libros se cargarán aca -->
+            </div>
+            <div class="pagination">
+                <button id="prev-page">Anterior</button>
+                <span id="page-info">Página 1</span>
+                <button id="next-page">Siguiente</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desarrollado con 📚 para el ejercicio de Biblioteja</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
