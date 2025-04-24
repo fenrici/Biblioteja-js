@@ -1,5 +1,5 @@
 /**
- * Módulo principal de la aplicación
+ * Módulo principal
  */
 class BookLibraryApp {
     constructor() {
@@ -44,9 +44,8 @@ class BookLibraryApp {
         this.init();
     }
     
-    /**
-     * Inicializar la aplicación
-     */
+     //Inicializar la aplicación
+     
     async init() {
         try {
             this.showLoader();
@@ -82,9 +81,8 @@ class BookLibraryApp {
         this.nextPageBtn.addEventListener('click', () => this.nextPage());
     }
     
-    /**
-     * Cargar categorías desde la API
-     */
+    // Cargar categorías desde la API
+    
     async loadCategories() {
         try {
             this.categories = await api.getLists();
@@ -96,9 +94,8 @@ class BookLibraryApp {
         }
     }
     
-    /**
-     * Renderizar categorías en la página
-     */
+     //Renderizar categorías en la página
+     
     renderCategories() {
         this.categoriesList.innerHTML = '';
         
@@ -128,9 +125,8 @@ class BookLibraryApp {
         });
     }
     
-    /**
-     * Filtrar categorías basado en búsqueda y filtro de frecuencia
-     */
+     //Filtrar categorías basado en búsqueda y filtro de frecuencia
+     
     filterCategories() {
         const searchTerm = this.categorySearch.value.toLowerCase();
         const frequency = this.frequencyFilter.value;
@@ -145,10 +141,8 @@ class BookLibraryApp {
         this.renderCategories();
     }
     
-    /**
-     * Ordenar categorías basado en criterios
+     //Ordenar categorías basado en criterios
      
-     */
     sortCategories(criteria) {
         switch (criteria) {
             case 'name':
@@ -171,10 +165,7 @@ class BookLibraryApp {
         this.renderCategories();
     }
     
-    /**
-     * Cargar lista de libros para una categoría específica
-     * @param {Object} category - Objeto de categoría
-     */
+    //Cargar lista de libros para una categoría específica
     async loadBooksList(category) {
         try {
             this.showLoader();
@@ -196,9 +187,8 @@ class BookLibraryApp {
         }
     }
     
-    /**
-     * Renderizar libros en la página
-     */
+    // Renderizar libros en la página
+    
     renderBooks() {
         this.booksList.innerHTML = '';
         
@@ -239,9 +229,8 @@ class BookLibraryApp {
         this.updatePagination();
     }
     
-    /**
-     * Actualizar controles de paginación
-     */
+    //Actualizar controles de paginación
+     
     updatePagination() {
         const totalPages = Math.ceil(this.filteredBooks.length / this.booksPerPage);
         this.pageInfo.textContent = `Página ${this.currentPage} de ${totalPages || 1}`;
@@ -250,9 +239,8 @@ class BookLibraryApp {
         this.nextPageBtn.disabled = this.currentPage >= totalPages || totalPages === 0;
     }
     
-    /**
-     * Ir a la página anterior
-     */
+    //Ir a la página anterior
+     
     prevPage() {
         if (this.currentPage > 1) {
             this.currentPage--;
@@ -261,8 +249,7 @@ class BookLibraryApp {
         }
     }
     
-    
-     //Ir a la página siguiente
+    //Ir a la página siguiente
      
     nextPage() {
         const totalPages = Math.ceil(this.filteredBooks.length / this.booksPerPage);
@@ -273,8 +260,7 @@ class BookLibraryApp {
         }
     }
     
-    
-     //Filtrar libros basado en búsqueda por título y autor
+    //Filtrar libros basado en búsqueda por título y autor
      
     filterBooks() {
         const titleSearchTerm = this.titleSearch.value.toLowerCase();
@@ -339,9 +325,8 @@ class BookLibraryApp {
         this.loader.classList.remove('hidden');
     }
     
-    /**
-     * Ocultar cargador
-     */
+     // Ocultar cargador
+    
     hideLoader() {
         this.loader.classList.add('hidden');
     }
